@@ -43,7 +43,7 @@ input[type="radio"] {
 
 .slide img {
     max-width: 100%;
-    height: auto;
+    height: 500px;
     border-radius: 10px;
 }
 
@@ -91,6 +91,7 @@ input#slide4:checked ~ .slides {
 
 .controls {
     display: flex;
+    gap: 5px;
     justify-content: center;
     margin-top: -20px;
     width: fit-content;
@@ -99,38 +100,41 @@ input#slide4:checked ~ .slides {
 }
 
 .controls label {
-    width: 15px;
-    height: 15px;
-    margin: 0 5px;
-    background-color: #71ABFE;
-    /* border: solid, 1rem; */
     border-color: #71ABFE;
     border-radius: 50%;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    padding: 5px;
 }
 
-.controls label:hover {
+.controls label div:hover {
     background-color: #fff;
 }
 
-.controls label:active {
+.controls label div:active {
     background-color: #555;
 }
 
+.controls label div {
+    width: 15px;
+    height: 15px;
+    background-color: #71ABFE;
+    border-color: #71ABFE;
+    border-radius: 50%;
+}
 
-input#slide1:checked ~ .controls label[for="slide1"],
-input#slide2:checked ~ .controls label[for="slide2"],
-input#slide3:checked ~ .controls label[for="slide3"],
-input#slide4:checked ~ .controls label[for="slide4"] {
+input#slide1:checked ~ .controls label[for="slide1"] div,
+input#slide2:checked ~ .controls label[for="slide2"] div,
+input#slide3:checked ~ .controls label[for="slide3"] div,
+input#slide4:checked ~ .controls label[for="slide4"] div {
     background-color: #000;
     border: solid, 2px;
     border-color: #71ABFE;
 }
 
-input#slide1:checked ~ .controls label[for="slide1"]:hover,
-input#slide2:checked ~ .controls label[for="slide2"]:hover,
-input#slide3:checked ~ .controls label[for="slide3"]:hover,
-input#slide4:checked ~ .controls label[for="slide4"]:hover {
+input#slide1:checked ~ .controls label[for="slide1"] div:hover,
+input#slide2:checked ~ .controls label[for="slide2"] div:hover,
+input#slide3:checked ~ .controls label[for="slide3"] div:hover,
+input#slide4:checked ~ .controls label[for="slide4"] div:hover {
     border-color: #fff;
 }
