@@ -102,14 +102,16 @@ input#slide4:checked ~ .slides {
     width: 15px;
     height: 15px;
     margin: 0 5px;
-    background-color: #ccc;
+    background-color: #71ABFE;
+    /* border: solid, 1rem; */
+    border-color: #71ABFE;
     border-radius: 50%;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .controls label:hover {
-    background-color: #888;
+    background-color: #fff;
 }
 
 .controls label:active {
@@ -121,5 +123,14 @@ input#slide1:checked ~ .controls label[for="slide1"],
 input#slide2:checked ~ .controls label[for="slide2"],
 input#slide3:checked ~ .controls label[for="slide3"],
 input#slide4:checked ~ .controls label[for="slide4"] {
-    background-color: blue;
+    background-color: #000;
+    border: solid, 2px;
+    border-color: #71ABFE;
+}
+
+input#slide1:checked ~ .controls label[for="slide1"]:hover,
+input#slide2:checked ~ .controls label[for="slide2"]:hover,
+input#slide3:checked ~ .controls label[for="slide3"]:hover,
+input#slide4:checked ~ .controls label[for="slide4"]:hover {
+    border-color: #fff;
 }
