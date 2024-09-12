@@ -16,7 +16,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 600px;
+    max-width: 800px;
     margin: 20px;
     overflow: hidden;
     background-color: #000;
@@ -47,7 +47,7 @@ input[type="radio"] {
     border-radius: 10px;
 }
 
-.slide h4 {
+.slide h6 {
     margin: 0;
     margin-top: 20px;
     font-size: 1.5rem;
@@ -65,10 +65,10 @@ input#slide4:checked ~ .slides .slide:nth-child(4) {
     transform: translateX(0);
 }
 
-input#slide1:checked ~ .slides .slide:nth-child(1) h4,
-input#slide2:checked ~ .slides .slide:nth-child(2) h4,
-input#slide3:checked ~ .slides .slide:nth-child(3) h4,
-input#slide4:checked ~ .slides .slide:nth-child(4) h4 {
+input#slide1:checked ~ .slides .slide:nth-child(1) h6,
+input#slide2:checked ~ .slides .slide:nth-child(2) h6,
+input#slide3:checked ~ .slides .slide:nth-child(3) h6,
+input#slide4:checked ~ .slides .slide:nth-child(4) h6 {
     opacity: 1;
     transform: translateY(0);
 }
@@ -97,6 +97,7 @@ input#slide4:checked ~ .slides {
     width: fit-content;
     align-self: flex-end;
     z-index: 1;
+    margin-bottom: 30px;
 }
 
 .controls label {
