@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.slider {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px;
+    overflow: hidden;
+    background-color: #000;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.7s ease-in-out;
+}
+
+.slide {
+    flex: 1 0 100%; 
+    display: flex;
+    flex-direction: column;
+    opacity: 0; 
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.slide img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.slide h4 {
+    margin: 0;
+    margin-top: 20px;
+    font-size: 1.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: transform 0.7s ease, opacity 0.7s ease;
+    color: #fff;
+}
+
+input#slide1:checked ~ .slides .slide:nth-child(1),
+input#slide2:checked ~ .slides .slide:nth-child(2),
+input#slide3:checked ~ .slides .slide:nth-child(3),
+input#slide4:checked ~ .slides .slide:nth-child(4) {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+input#slide1:checked ~ .slides .slide:nth-child(1) h4,
+input#slide2:checked ~ .slides .slide:nth-child(2) h4,
+input#slide3:checked ~ .slides .slide:nth-child(3) h4,
+input#slide4:checked ~ .slides .slide:nth-child(4) h4 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+input#slide1:checked ~ .slides {
+    transform: translateX(0%);
+}
+
+input#slide2:checked ~ .slides {
+    transform: translateX(-100%);
+}
+
+input#slide3:checked ~ .slides {
+    transform: translateX(-200%);
+}
+
+input#slide4:checked ~ .slides {
+    transform: translateX(-300%);
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    margin-top: -20px;
+    width: fit-content;
+    align-self: flex-end;
+    z-index: 1;
+}
+
+.controls label {
+    width: 15px;
+    height: 15px;
+    margin: 0 5px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.controls label:hover {
+    background-color: #888;
+}
+
+.controls label:active {
+    background-color: #555;
+}
+
+
+input#slide1:checked ~ .controls label[for="slide1"],
+input#slide2:checked ~ .controls label[for="slide2"],
+input#slide3:checked ~ .controls label[for="slide3"],
+input#slide4:checked ~ .controls label[for="slide4"] {
+    background-color: blue;
+}
