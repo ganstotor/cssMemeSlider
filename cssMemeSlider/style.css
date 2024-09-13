@@ -1,0 +1,164 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.slider {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 50rem;
+    margin: 1.25rem;
+    overflow: hidden;
+    background-color: #000;
+    border-radius: 0.625rem;
+    padding: 1.25rem;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.7s ease-in-out;
+}
+
+.slide {
+    flex: 1 0 100%; 
+    display: flex;
+    flex-direction: column;
+    opacity: 0; 
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.slide img {
+    max-width: 100%;
+    height: 30rem;
+    border-radius: 0.625rem;
+}
+
+.slide h6 {
+    margin: 0;
+    margin-top: 1.25rem;
+    font-size: 1.5rem;
+    opacity: 0;
+    transform: translateY(1.25rem);
+    transition: transform 0.7s ease, opacity 0.7s ease;
+    color: #fff;
+}
+
+input#slide1:checked ~ .slides .slide:nth-child(1),
+input#slide2:checked ~ .slides .slide:nth-child(2),
+input#slide3:checked ~ .slides .slide:nth-child(3),
+input#slide4:checked ~ .slides .slide:nth-child(4) {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+input#slide1:checked ~ .slides .slide:nth-child(1) h6,
+input#slide2:checked ~ .slides .slide:nth-child(2) h6,
+input#slide3:checked ~ .slides .slide:nth-child(3) h6,
+input#slide4:checked ~ .slides .slide:nth-child(4) h6 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+input#slide1:checked ~ .slides {
+    transform: translateX(0%);
+}
+
+input#slide2:checked ~ .slides {
+    transform: translateX(-100%);
+}
+
+input#slide3:checked ~ .slides {
+    transform: translateX(-200%);
+}
+
+input#slide4:checked ~ .slides {
+    transform: translateX(-300%);
+}
+
+.controls {
+    display: flex;
+    gap: 0.3125rem;
+    justify-content: center;
+    margin-top: -1.25rem;
+    width: fit-content;
+    align-self: flex-end;
+    z-index: 1;
+    margin-bottom: 1.875rem;
+}
+
+.controls label {
+    border-color: #71ABFE;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 0.3125rem;
+}
+
+.controls label div:hover {
+    background-color: #fff;
+}
+
+.controls label div:active {
+    background-color: #555;
+}
+
+.controls label div {
+    width: 0.9375rem;
+    height: 0.9375rem;
+    background-color: #71ABFE;
+    border-color: #71ABFE;
+    border-radius: 50%;
+}
+
+input#slide1:checked ~ .controls label[for="slide1"] div,
+input#slide2:checked ~ .controls label[for="slide2"] div,
+input#slide3:checked ~ .controls label[for="slide3"] div,
+input#slide4:checked ~ .controls label[for="slide4"] div {
+    background-color: #000;
+    border: solid, 0.125rem;
+    border-color: #71ABFE;
+}
+
+input#slide1:checked ~ .controls label[for="slide1"] div:hover,
+input#slide2:checked ~ .controls label[for="slide2"] div:hover,
+input#slide3:checked ~ .controls label[for="slide3"] div:hover,
+input#slide4:checked ~ .controls label[for="slide4"] div:hover {
+    border-color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+    .slide h6 {
+
+        margin-top: 3.75rem;
+
+    }
+
+    .controls {
+        margin-top: -4.37rem;
+        align-self: center;
+
+    }
+
+    .slider {
+        padding-bottom: 3.75rem;
+    }
+
+    .slide img {
+        max-height: 15rem;
+    }
+}
+    
